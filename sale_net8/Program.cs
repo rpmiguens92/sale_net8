@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using sale_net8.Data;
+using System.Configuration;
+
 namespace sale_net8
 {
     public class Program
@@ -8,6 +12,9 @@ namespace sale_net8
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+      
+
 
             var app = builder.Build();
 
@@ -32,5 +39,8 @@ namespace sale_net8
 
             app.Run();
         }
+
     }
+   
 }
+
