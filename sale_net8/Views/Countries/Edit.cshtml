@@ -1,5 +1,4 @@
 ﻿@model sale_net8.Data.Entities.Country
-
 @{
     ViewData["Title"] = "Edit";
 }
@@ -13,11 +12,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+            <partial name="_country" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
