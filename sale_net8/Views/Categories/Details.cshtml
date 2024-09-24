@@ -1,0 +1,13 @@
+﻿@model sale_net8.Data.Entities.Category
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div>
+    <partial name="_categoryDetails" model="Model"></partial>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-success">Voltar à lista</a>
+</div>
